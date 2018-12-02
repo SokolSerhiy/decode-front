@@ -17,8 +17,6 @@ export class AppComponent {
   code() {
     const word = this.word.value;
     const maxRes = this.maxRes.value as number;
-    console.log(word);
-    console.log(maxRes);
     this.word.setValue('');
     this.service.code(word, maxRes === null ? 10 : maxRes).subscribe((res: Decode) => this.result = res);
   }
