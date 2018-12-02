@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div style="text-align:center" class="col-12">
+    <h1>
+      Вітаю у грі Декодувальник
+    </h1>
+  </div>
+  <h2 class="col-12" style="text-align:center">Нижче потрібно ввести слово яке буде закодовано</h2>
+  <div class="col-12">
+    <label for="word" class="col-1 col-form-label">Слово:</label>
+    <input type="text" [formControl]="word" class="form-control" id="word">
+    <button class="btn btn-info" (click)="code()">Кодувати</button>
+    <label for="maxRes" class="col-4 col-form-label">Максимальний результат прикладів:</label>
+    <input type="number" [formControl]="maxRes" class="form-control" id="maxRes">
+  </div>
+  <ul *ngIf="result" class="col-12">
+    <li *ngFor="let example of result.examples">
+      {{example}}
+    </li>
+  </ul>
+  <div *ngIf="result" class="col-12">
+    Якщо всі приклади розвязані, ви можете декодувати слово використовуючи результати прикладів і підказку нижче:
+  </div>
+  <div *ngIf="result" class="col-12">
+    <div class="row">
+      <div class="col flex-grow-0 bordered" *ngFor="let hint of result.hints">
+        {{hint.number}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col flex-grow-0 bordered" *ngFor="let hint of result.hints">
+        {{hint.letter}}
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
