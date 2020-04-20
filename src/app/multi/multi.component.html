@@ -1,0 +1,33 @@
+<div class="container">
+  <div style="text-align:center" class="col-12">
+    <h1>
+      Вітаю у грі Таблиця множення
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col">Оберіть таблиці:</div>
+    <div class="col" *ngFor="let table of tables">
+      <input class="form-check-label" type="checkbox" id="table{{table}}" (change)="toggleTable(table)">
+      <label class="col-form-label" for="table{{table}}">на {{table}}</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">Розв'яжіть приклад: </div>
+    <div class="col" style="text-align: right">{{example}} = </div>
+    <input class="form-control col" [formControl]="res">
+  </div>
+  <div class="row">
+    <div class="col bordered" (click)="enterNumber('0')">0</div>
+    <div class="col bordered" *ngFor="let table of tables" (click)="enterNumber(table)">
+      {{table}}
+    </div>
+    <div class="col bordered" (click)="clearOne()"><-</div>
+    <div class="col bordered" (click)="clearAll()">c</div>
+    <button class="btn btn-success" (click)="check()">Перевірити</button>
+  </div>
+  <div class="row" *ngIf="message">
+    <div class="col" [ngClass]="message === 'Вірно' ? 'correct' : 'wrong'" style="text-align:center">
+      {{message}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.bordered{
+  border: solid black 2px;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+}

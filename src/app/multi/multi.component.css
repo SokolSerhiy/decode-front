@@ -1,0 +1,20 @@
+.bordered{
+  border: solid black 2px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+  cursor: pointer;
+}
+.row{
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.correct{
+  background-color: green;
+  font-size: 30px;
+}
+.wrong{
+  background-color: darkred;
+  font-size: 30px;
+}

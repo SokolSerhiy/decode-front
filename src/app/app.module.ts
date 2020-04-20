@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DecodeModule } from './decode/decode.module';
+import { MultiModule } from './multi/multi.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DecodeModule } from './decode/decode.module';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    DecodeModule
+    DecodeModule,
+    MultiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
